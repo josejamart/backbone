@@ -1495,8 +1495,8 @@
   var wrapError = function (model, options) {
     var error = options.error;
     options.error = function(resp) {
-      if (error) error(model, resp, options);
-      model.trigger('error', model, resp, options);
+      if (error) error(model, resp, options, this);
+      model.trigger('error', model, resp, options, this);
     };
   };
 
